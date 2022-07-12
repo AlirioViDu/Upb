@@ -1,0 +1,57 @@
+<div class="main-content container-fluid">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Datatable</h3>
+                <p class="text-subtitle text-muted">We use 'simple-datatables' made by @fiduswriter. You can
+                    check the full documentation <a
+                        href="https://github.com/fiduswriter/Simple-DataTables/wiki">here</a>.</p>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Ventas</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="card">
+            <div class="card-header">
+                Ventas
+            </div>
+            <div class="card-body">
+                <table class='table table-striped' id="table1">
+                    <thead>
+                        <tr>
+                            <th>Periodo</th>
+                            <th>Vendedor</th>
+                            <th>Linea</th>
+                            <th>Valor</th>                       
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var i=0; i<ventas.length; i++){ %>
+                            <tr>
+                                <td>
+                                    <%= ventas[i].periodo %>
+                                </td>
+                                <td>
+                                    <%= ventas[i].idvendedor %>
+                                </td>
+                                <td>
+                                    <%= ventas[i].idlinea %>
+                                </td>
+                                <td>
+                                    <%= ventas[i].valor %>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

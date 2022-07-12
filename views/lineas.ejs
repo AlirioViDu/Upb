@@ -1,0 +1,64 @@
+<div class="main-content container-fluid">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Datatable</h3>
+                <p class="text-subtitle text-muted">We use 'simple-datatables' made by @fiduswriter. You can
+                    check the full documentation <a
+                        href="https://github.com/fiduswriter/Simple-DataTables/wiki">here</a>.</p>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Lineas</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="card">
+            <div class="card-header">
+                Lineas
+            </div>
+            <div class="card-body">
+                <table class='table table-striped' id="table1">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Estado</th>
+                            <th>Accion</th>
+<!--                             <th><a href="#addEmployeeModal" class="btn btn-success"
+                                    data-toggle="modal"><span>Nuevo</span></a></th> -->
+                            <!-- <th><a href="·linea_crear" ali="" class="btn btn-danger">Crear</a></th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var i=0; i<lineas.length; i++){ %>
+                            <tr>
+                                <td>
+                                    <%= lineas[i].codigolinea %>
+                                </td>
+                                <td>
+                                    <%= lineas[i].nombre %>
+                                </td>
+                                <td>
+                                    <!-- <%= lineas[i].activo %> -->
+                                    <%= lineas[i].activo ? 'Activo' : 'Inactivo' %>
+                                </td>                                
+                                <td>
+                                    <a href="/linea_cambiar/<%= lineas[i]._id %>" class="btn btn-warning">Estado</a>
+<!--                                     <a href="/linea_Editar/<%= lineas[i]._id %>" class="btn btn-info">Editar</a> -->
+<!--                                     <a href="#editEmployeeModal/<%= lineas[i]._id %>" class="btn btn-info"
+                                        data-toggle="modal" onclick='openModal()'>Editar</a> -->                                    
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
